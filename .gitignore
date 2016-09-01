@@ -6,3 +6,11 @@ fields terminated by ','
 stored as textfile;
 
 load data local inpath '/txns1.txt' into table txnrecords;
+
+create external table externaltxnrecords(txnno INT, txndate STRING, custno INT, amount DOUBLE, 
+category STRING, product STRING, city STRING, state STRING, spendby STRING)
+row format delimited
+fields terminated by ','
+stored as textfile location '/hivetable';
+
+
